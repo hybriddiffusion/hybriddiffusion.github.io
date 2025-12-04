@@ -1,295 +1,157 @@
-<!DOCTYPE HTML>
-<!--
-	Hyperspace by HTML5 UP
-	html5up.net | @ajlkn
-	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
--->
-<html>
-	<head>
-		<title>S<sup>2</sup>-Diffusion</title>
-		<meta charset="utf-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-		<link rel="stylesheet" href="assets/css/main.css" />
-		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-		<link href="assets/css/llm.css" rel="stylesheet">
-		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
-	</head>
-	<body class="is-preload">
+<!DOCTYPE HTML> <html> <head> <title>Hybrid-Diffusion Models: Combining Open-loop Routines with Visuomotor Diffusion Policies</title> <meta charset="utf-8" /> <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" /> <link rel="stylesheet" href="assets/css/main.css" /> <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"> <link href="assets/css/llm.css" rel="stylesheet"> <noscript> <link rel="stylesheet" href="assets/css/noscript.css" /> </noscript> </head> <body class="is-preload">
+<!-- Sidebar -->
+<section id="sidebar">
+	<div class="inner">
+		<nav>
+			<ul>
+				<li><a href="#intro">Hybrid-Diffusion</a></li>
+				<li><a href="#eval">Experiments</a></li>
+			</ul>
+		</nav>
+	</div>
+</section>
 
-		<!-- Sidebar -->
-			<section id="sidebar">
-				<div class="inner">
-					<nav>
-						<ul>
-							<li><a href="#intro">S<sup>2</sup>-Diffusion</a></li>
-							<li><a href="#train">Expert Demonstrations</a></li>
-							<li><a href="#eval">Experiments</a></li>
-							<!--li><a href="#cite">How to Cite</a></li-->
-							<li><a href="#contact">Contact</a></li>
-						</ul>
-					</nav>
+<!-- Wrapper -->
+<div id="wrapper">
+
+	<!-- Intro -->
+	<section id="intro" class="wrapper style1 fullscreen fade-up">
+		<div class="inner">
+			<h2>Hybrid-Diffusion Models: Combining Open-loop Routines with Visuomotor Diffusion Policies</h2>
+			<h3>Jonne Van Haastregt<sup>∗,1</sup>, Bastian Orthmann<sup>∗,1</sup>, Michael C. Welle<sup>1,2</sup>, Yuchong Zhang<sup>2</sup>, Danica Kragic<sup>2</sup></h3>
+			<p>
+				Despite the fact that visuomotor-based policies obtained via imitation learning demonstrate good performances
+				in complex manipulation tasks, they usually struggle to achieve the same accuracy and speed as traditional control based methods. In this work, we introduce Hybrid-Diffusion models that combine open-loop routines with visuomotor diffusion policies.
+				We develop Teleoperation Augmentation Primitives (TAPs) that allow the operator to perform predefined routines, such as locking specific axes, moving to perching waypoints, or triggering task-specific routines seamlessly during demonstrations. Our Hybrid-Diffusion method learns to trigger such TAPs during inference. We validate the method on challenging real-world tasks: Vial Aspiration, Open-Container Liquid Transfer, and container unscrewing.
+			</p>
+
+			<p style="margin:0 0 8px 0;"><strong>Hybrid-Diffusion</strong></p>
+
+			<div style="display:flex; align-items:flex-start; column-gap:24px; flex-wrap:wrap; margin: 20px 0;">
+				<div style="flex:1 1 520px; max-width:580px;">
+					<p style="margin:0;">
+						Overview of our Hybrid-Diffusion Model; during teleoperation, the expert can trigger a
+						Teleoperation Augmentation Primitive (TAP) either via speech or (AR) controller inputs. The
+						Hybrid-Diffusion model learns to also trigger such TAP routines during execution, making use
+						of routines during tasks.
+					</p>
 				</div>
-			</section>
 
-		<!-- Wrapper -->
-			<div id="wrapper">
-
-				<!-- Intro -->
-					<section id="intro" class="wrapper style1 fullscreen fade-up">
-						<div class="inner">
-							<h2>							<h2>S<sup>2</sup>-Diffusion: Generalizing from Instance-level to Category-level Skills in Robot Manipulation</h2>
- </h2>
-							<h3>Quantao Yang<sup>∗,1</sup>, Michael C. Welle<sup>∗,1,2</sup>, Danica Kragic<sup>1</sup>, and Olov Andersson<sup>1</sup></h3>
-							<p>
-								Recent advances in skill learning has propelled robot manipulation to new heights by enabling it to learn complex manipulation tasks from a practical number of demonstrations. However, these skills are often limited to the particular action, object, and environment \textit{instances} that are shown in the training data, and have trouble transferring to other instances of the same category.
-								In this work we present an open-vocabulary Spatial-Semantic Diffusion policy (S$^2$-Diffusion) which enables generalization from instance-level training data to category-level, enabling skills to be transferable between instances of the same category. We show that functional aspects of skills can be captured via a promptable semantic module combined with a spatial representation. We further propose leveraging depth estimation networks to allow the use of only a single RGB camera.
-								Our approach is evaluated and compared on a diverse number of robot manipulation tasks, both in simulation and in the real world. Our results show that S$^2$-Diffusion is invariant to changes in category-irrelevant factors as well as enables satisfying performance on other instances within the same category, even if it was not trained on that specific instance. 
-							<p>
-							</p>
-							<div class="row">
-								<div class="video-container">
-							        <p><b>S<sup>2</sup>-Diffusion</b> </p>
-							        <video width="960" height="540" controls>
-							            <source src="videos/summary_video_ral_s2.mp4" type="video/mp4">
-							            Your browser does not support the video tag.
-							        </video>
-
-							    </div>
-
-							</div>
-							<p> </p>
-							<a href="files/preprint.pdf" target="_blank" download="files/preprint.pdf">Download Preprint</a>
-							<p> </p>
-							<ul >
-							  <li><sup>∗</sup> These authors contributed equally.</li>
-							  <li><sup>1</sup> KTH Royal Institute of Technology, Stockholm, Sweden</li>
-							  <li><sup>2</sup> INCAR Robotics AB, Stockholm, Sweden</li>
-							</ul>
-
-
-
-
-						</div>
-					</section>
-
-
-					<!-- Train -->
-					<section id="train" class="wrapper style2 fade-up">
-						<div class="inner">
-							<h2>Expert Demonstrations</h2>
-
-
-								<div class="video-container">
-							        <p><b>Red whiteboard wiping demonstrations</b> </p>
-							        <video width="640" height="360" controls preload="auto">
-							            <source src="videos/expert_demos_wipe_speed5.mkv" type="video/mp4">
-							            Your browser does not support the video tag.
-							        </video>
-							      </div>
-
-
-							<div class="video-container">
-							        <p><b>Bowl-to-bowl rice scooping demonstrations</b> </p>
-							        <video width="640" height="360" controls preload="auto">
-							            <source src="videos/expert_demos_rice_speed5.mkv" type="video/mp4">
-							            Your browser does not support the video tag.
-							        </video>
-							 </div>
-
-							<div class="video-container">
-							        <p><b>Close-Container demonstrations</b> </p>
-							        <video width="640" height="360" controls preload="auto">
-							            <source src="videos/all_train_video_ee_video.mkv" type="video/mp4">
-							            Your browser does not support the video tag.
-							        </video>
-							 </div>
-
-						</div>
-					</section>
-
-
-
-					<!-- Eval -->
-					<section id="eval" class="wrapper style3 fade-up">
-						<div class="inner">
-							<h2>Experiments </h2>
-
-							<p> </p>
-							<p> We evaluated policies trained on only red marker on red, green, and black marker instances</p>
-
-
-							<div class="row">
-								<div class="video-container">
-							        <p><b>Red whiteboard wiping task</b> </p>
-							        <video width="640" height="360" controls preload="auto">
-							            <source src="videos/wiping_semantic_red_t03.mkv" type="video/mp4">
-							            Your browser does not support the video tag.
-							        </video>
-							    </div>
-							    <div class="video-container">
-							        <p><b>Green whiteboard wiping task</b> </p>
-							        <video width="640" height="360" controls preload="auto">
-							            <source src="videos/wiping_semantic_green_t03.mkv" type="video/mp4">
-							            Your browser does not support the video tag.
-							        </video>
-							    </div>
-							    <div class="video-container">
-							        <p><b>Black whiteboard wiping task</b> </p>
-							        <video width="640" height="360" controls preload="auto">
-							            <source src="videos/wiping_semantic_black_t03.mkv" type="video/mp4">
-							            Your browser does not support the video tag.
-							        </video>
-							    </div>
-							  
-							</div>
-
-							<p> All experiments: </p>
-
-							
-							<p> <a class="button mybutton"  href="whiteboard_wiping.html" target="_blank" > Whiteboard wiping</a> </p>
-
-							<p> </p>
-							<p> We evaluated policies trained on only rice scooping marker on rice, choco, hearts, and mixed cerial instances</p>
-
-
-							<div class="row">
-								<div class="video-container">
-							        <p><b>Rice Bowl-to-bowl scooping task</b> </p>
-							        <video width="640" height="360" controls preload="auto">
-							            <source src="videos/semantic_rice_rice_t08.mkv" type="video/mp4">
-							            Your browser does not support the video tag.
-							        </video>
-							    </div>
-							    <div class="video-container">
-							        <p><b>Choco Bowl-to-bowl scooping task</b> </p>
-							        <video width="640" height="360" controls preload="auto">
-							            <source src="videos/semantic_rice_choco_t08.mkv" type="video/mp4">
-							            Your browser does not support the video tag.
-							        </video>
-							    </div>
-							    <div class="video-container">
-							        <p><b>Hearts Bowl-to-bowl scooping task</b> </p>
-							        <video width="640" height="360" controls preload="auto">
-							            <source src="videos/semantic_rice_hearts_t08.mkv" type="video/mp4">
-							            Your browser does not support the video tag.
-							        </video>
-							    </div>
-							    <div class="video-container">
-							        <p><b>Mixed Bowl-to-bowl scooping task</b> </p>
-							        <video width="640" height="360" controls preload="auto">
-							            <source src="videos/semantic_rice_mixed_t10.mkv" type="video/mp4">
-							            Your browser does not support the video tag.
-							        </video>
-							    </div>
-							  
-							</div>
-
-							<p> All experiments: </p>
-
-							<div class="row">
-							<p> <a class="button mybutton"  href="bowl_to_bowl_scooping.html" target="_blank" > Bowl-to-Bowl scooping</a> </p>
-
-
-							</div>
-
-
-
-						<p> </p>
-							<p> We evaluated ablation policies trained on only rice close container on rice and instances</p>
-
-
-							<div class="row">
-
-								<div class="video-container">
-							        <p><b>Showcase RGB-Diffusion limitation</b> </p>
-							        <video width="640" height="360" controls preload="auto">
-							            <source src="videos/showcase_DP_RGB.mp4" type="video/mp4">
-							            Your browser does not support the video tag.
-							        </video>
-							    </div>
-
-
-								<div class="video-container">
-							        <p><b>Close-container choco S2-Diffusion</b> </p>
-							        <video width="640" height="360" controls preload="auto">
-							            <source src="videos/choco_trial1_2_S2_Diffusion.mp4" type="video/mp4">
-							            Your browser does not support the video tag.
-							        </video>
-							    </div>
-							    
-							  
-							</div>
-
-							<p> All experiments: </p>
-
-							<div class="row">
-							<p> <a class="button mybutton"  href="close_container.html" target="_blank" > Close-Container</a> </p>
-
-
-							</div>
-
-
-							
-
-						</div>
-					</section>
-
-				
-						<!-- Cite -->
-					<!--section id="cite" class="wrapper style2 fade-up">
-
-						<div class="inner">
-							<h2>Use the following to cite us:</h2>
-							p class="p-code"><code>@inproceedings{welle2024quest2ros, <br>
-						  title={Quest2ROS: An App to Facilitate Teleoperating Robots},<br>
-						  author={Welle, Michael C and Ingelhag, Nils and Lippi, Martina and Wozniak, Maciej and Gasparri, Andrea and Kragic, Danica},<br>
-						  booktitle={7th International Workshop on Virtual, Augmented, and Mixed-Reality for Human-Robot Interactions},<br>
-						  year={2024}
-							}
-</code></p>
-							<p> </p>
-
-
-						</div>
-
-
-					</section-->
-
-
-					<!-- five -->
-					<!--section id="contact" class="wrapper style1 fade-up">
-						<div class="inner">
-							<h2>Contact</h2>
-							<ul>
-										<li>Michael C. Welle; mwelle(at)kth.se; KTH Royal Institute of Technology, Sweden</li>
-
-									</ul>
-
-						</div>
-					</section-->
-
-
-
-
+				<div style="flex:0 1 420px;">
+					<img src="files/fig_1_HD.png" alt="figure explaining hybrid diffusion"
+						 style="display:block; width:420px; max-width:100%; height:auto; object-fit:contain;">
+				</div>
 			</div>
 
-		<!-- Footer -->
-			<footer id="footer" class="wrapper style1-alt">
-				<div class="inner">
-				<ul class="copyright">
-						<li>&copy; All rights reserved</li><li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
-					</ul>
+			<p></p>
+			<a href="files/preprint.pdf" target="_blank" download="files/preprint.pdf" style="color: red;">Download Preprint</a>
+			<p></p>
+			<ul>
+				<li><sup>∗</sup> These authors contributed equally.</li>
+				<li><sup>1</sup> INCAR Robotics AB, Stockholm, Sweden</li>
+				<li><sup>2</sup> KTH Royal Institute of Technology, Stockholm, Sweden</li>
+			</ul>
+		</div>
+	</section>
+
+	<!-- Eval -->
+	<section id="eval" class="wrapper style3 fade-up">
+		<div class="inner">
+			<h2>Experiments</h2>
+			<p>
+				We evaluated policies trained on three tasks, among seven novel starting positions - each repeated
+				three times.
+			</p>
+
+			<img src="files/result_p.png"
+				alt="figure showing the results of evaluating hybrid diffusion vs baseline diffusion"
+				style="display:block; width:45%; max-width:520px; height:auto; object-fit:contain; margin-bottom:18px;">
+
+			<div class="row" style="margin-bottom:20px;">
+				<h3>Open-Container Liquid Transfer</h3>
+
+				<div style="display:flex; align-items:flex-start; column-gap:24px; flex-wrap:wrap; margin-bottom:28px;">
+					<div style="flex:1 1 320px; max-width:480px;">
+						<p style="margin:0;">
+							The robot is equipped with a syringe. The task is to draw the liquid substances from the right chemical container and deposit them into the left container. The TAP Perching-waypoints makes this task easier as it allows the operator to always go to an initial perching waypoint, draw the liquid, activate another perching waypoint that brings the target container in clear view to deposit the liquid.
+						</p>
+					</div>
+
+					<div style="flex:0 1 420px;">
+						<video controls preload="auto" style="width:100%; max-width:640px; height:auto; max-height:60vh; display:block;">
+							<source src="videos/syringe/explicit/demo_05.mp4" type="video/mp4">
+							Your browser does not support the video tag.
+						</video>
+					</div>
 				</div>
-			</footer>
 
-		<!-- Scripts -->
-			<script src="assets/js/jquery.min.js"></script>
-			<script src="assets/js/jquery.scrollex.min.js"></script>
-			<script src="assets/js/jquery.scrolly.min.js"></script>
-			<script src="assets/js/browser.min.js"></script>
-			<script src="assets/js/breakpoints.min.js"></script>
-			<script src="assets/js/util.js"></script>
-			<script src="assets/js/main.js"></script>
+				<p>All experiments: <a class="button mybutton" href="open_container_liquid_transfer.html" target="_blank">Open-Container Liquid Transfer</a></p>
+			</div>
 
-	</body>
-</html>
+			<div class="row" style="margin-bottom:20px;">
+				<h3>Vial Aspiration</h3>
+
+				<div style="display:flex; align-items:flex-start; column-gap:24px; flex-wrap:wrap; margin-bottom:28px;">
+					<div style="flex:1 1 320px; max-width:480px;">
+						<p style="margin:0;">
+							The robot is equipped with a syringe and has to draw liquid out of a vial that is mounted on a sphere that enables arbitrary rotations (up to the point no liquid is flowing out of the vial). As the rotational alignment of the syringe needle with the vial is quite challenging the operator makes use of the Axis locking TAP - specifically to lock all rotational axes once the desired rotation is achieved.
+						</p>
+					</div>
+
+					<div style="flex:0 1 420px;">
+						<video controls preload="auto" style="width:100%; max-width:640px; height:auto; max-height:60vh; display:block;">
+							<source src="videos/syringe_ball/explicit/demo_02.mp4" type="video/mp4">
+							Your browser does not support the video tag.
+						</video>
+					</div>
+				</div>
+
+				<p>All experiments: <a class="button mybutton" href="vial_aspiration.html" target="_blank">Vial Aspiration</a></p>
+			</div>
+
+			<div class="row" style="margin-bottom:20px;">
+				<h3>Container Unscrewing</h3>
+
+				<div style="display:flex; align-items:flex-start; column-gap:24px; flex-wrap:wrap; margin-bottom:28px;">
+					<div style="flex:1 1 320px; max-width:480px;">
+						<p style="margin:0;">
+							A second robot arm (not controlled by the policy) holds a container with a threaded cap. The task is to bring the robot into position over the container, grasp the lid and unscrew it from the container and place it on the table. In this task, an open-loop routine TAP, specifically an unscrewing routine, is essential for task success. The operator simply brings the robot into position, ready to grasp the lid, and triggers the TAP to initiate the routine.
+						</p>
+					</div>
+
+					<div style="flex:0 1 420px;">
+						<video controls preload="auto" style="width:100%; max-width:640px; height:auto; max-height:60vh; display:block;">
+							<source src="videos/unscrew_cap/explicit/demo_01.mp4" type="video/mp4">
+							Your browser does not support the video tag.
+						</video>
+					</div>
+				</div>
+
+				<p>All experiments: <a class="button mybutton" href="unscrew_cap.html" target="_blank">Container Unscrewing</a></p>
+			</div>
+
+		</div>
+	</section>
+
+</div>
+
+<!-- Footer -->
+<footer id="footer" class="wrapper style1-alt">
+	<div class="inner">
+		<ul class="copyright">
+			<li>&copy; All rights reserved</li>
+			<li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+		</ul>
+	</div>
+</footer>
+
+<!-- Scripts -->
+<script src="assets/js/jquery.min.js"></script>
+<script src="assets/js/jquery.scrollex.min.js"></script>
+<script src="assets/js/jquery.scrolly.min.js"></script>
+<script src="assets/js/browser.min.js"></script>
+<script src="assets/js/breakpoints.min.js"></script>
+<script src="assets/js/util.js"></script>
+<script src="assets/js/main.js"></script>
+
+</body> </html>
